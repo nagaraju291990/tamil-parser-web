@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>
+		Tamil Parser | Parts of Specch | Morphological Analyzer |Syntactic Parser
+		</title>
+		<script src="js/jquery.js"></script>
+		<script src="js/chosen.jquery.min.js" type="text/javascript"></script>
+		<script src="js/jquery-ui.js"></script>
+		<link rel="stylesheet" href="css/chosen.min.css">
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="js/FileSaver.js"></script>
+		<script type="text/javascript" src="js/validation.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+		<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+		
+		<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js" ></script>
+		<script type="text/javascript" src="js/convert.js" ></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		<meta charset='utf-8'>
+	</head>
+	<body>
+		<div>
+			<h1 align="center">Tamil Syntactic Parser </h1>
+			<!--common for file and text output-->
+			<!--upload form-->
+			<form class="form-inline" id="upload" method="post" enctype="multipart/form-data">
+				<div class="form-group col-12 col-m-12">
+					
+					
+					<img style="margin-left:2%;height:4%;position:relative;" id="loading" src="images/processing.gif"></img>
+					<br>
+					<div class="row">
+						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8 col-md-2">
+							<textarea class="form-control" id="input"></textarea>
+						</div>
+						<div style="margin-top: 1%;" class="col-sm-offset-2 col-sm-8 col-lg-8 col-md-offset-2">
+							<select class="form-control" multiple id="output_type">
+								<option value="pos">Parts of Speech</option>
+								<option value="mas">Morph Analysis</option>
+								<option value="sas">Syntax Analysis</option>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div style="clear:right" class="col-sm-offset-4 col-sm-8 col-lg-8">
+							<!--<button id="sample1" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id);">
+							Sample1
+							</button>
+							<button id="sample2" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id);">
+							Sample2
+							</button>
+							<button id="sample3" type="button" class="btn btn-default navbar-btn sample" onclick="sample(this.id)">
+							Sample3
+							</button>-->
+							<button id="clear" type="button" class="btn btn-default navbar-btn" onclick="empty();">
+							clear
+							</button>
+							<button id="submit" type="button" class="btn btn-default navbar-btn" onclick="submittext();">
+							Annotate
+							</button>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8" id="postagresult">
+						</div>
+					</div>
+					<select style="background-color:#7ba733;color:#fff;" name="savetype"  id="savetype" class="form-control"><option value="" >Download</option>
+					<option disabled="true"></option>
+					<option value="txt">.txt </option>
+				</select>
+				<button id="download" type="button" disabled class="btn btn-default navbar-btn" onclick="saveasfile();">
+				Download
+				</button>
+				</div> <!-- end of form group div -->
+			</form>
+			<div class="progressbar">
+				<div class="bar">
+				</div>
+				</div> <!-- end of progressbar div-->
+				<!--<div contenteditable="true" id="result"></div>--> <!-- end of result div-->
+				<!--			<textarea onkeypress="txtAreaId(this.id);" id="result-text"></textarea> -->
+				</div>	<!-- end of container div -->
+			</body>
+		</html>
