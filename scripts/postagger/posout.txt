@@ -1,11 +1,6 @@
-பல	DET
-காலமாக	ADJ
-விவசாயிகள்	NOUN
-எதிர்பார்த்த	VERB
-அறிவிப்பு	AUX
-வெளியானது..	PUNCT
-தடைகள்	PROPN
-தகர்க்கப்படும்-	PROPN
-நிர்மலா	PROPN
-அதிரடி	PROPN
+ஓசி	PROPN
+மின்சாரம்	PROPN
+ரத்து:	PROPN
+விவசாயிகள்	PROPN
+கண்டனம்	PROPN
 	

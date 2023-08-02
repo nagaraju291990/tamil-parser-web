@@ -97,16 +97,22 @@ function submittext(){
 			//alert(data);
 			var tgttext = data;
 			var postable ='<div class="panel-heading">Parts of Speech</div><table class="table table-bordered table-striped table-condensed table-responsive">';
+			var postagcloud ='<div class="pos-tag-cloud">';
 			postable += '<tr class="success"><th>Token</th><th>POS</th></tr>';
 			var arr = tgttext.split("\n");
 			for(var i=0;i<arr.length-1;i++) {
 				var arr2 = arr[i].split("\t");
-				postable += '<tr><td style="width:25%;">' + arr2[0] + '</td><td style="width:25%;"> ' + arr2[1] + ' </td></tr>';
+				if(arr2[0].trim() != "") {
+					postable += '<tr><td style="width:25%;">' + arr2[0] + '</td><td style="width:25%;"> ' + arr2[1] + ' </td></tr>';
+					postagcloud += '<span class="token">' + arr2[0] + '</span><span class="pos-tag">' + arr2[1]+ '</span>';
+				}
 			}
 			postable += '</table>';
+			postagcloud += '</div>';
 
 			//$("#postagresult").text(tgttext);
 			$("#postagresult").html(postable);
+			$("#postagresult").html(postagcloud);
 			$('#download').prop('disabled', false);
 			$("#savetype").show();
 			$("#download").show();
