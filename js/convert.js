@@ -96,23 +96,47 @@ function submittext(){
 			$("#loading").hide();
 			//alert(data);
 			var tgttext = data;
+			
 			var postable ='<div class="panel-heading">Parts of Speech</div><table class="table table-bordered table-striped table-condensed table-responsive">';
+			var motable ='<div class="panel-heading">Morph Analysis</div><table class="table table-bordered table-striped table-condensed table-responsive">';
 			var postagcloud ='<div class="pos-tag-cloud">';
 			postable += '<tr class="success"><th>Token</th><th>POS</th></tr>';
-			var arr = tgttext.split("\n");
+			/*var arr = tgttext.split("\n");
 			for(var i=0;i<arr.length-1;i++) {
 				var arr2 = arr[i].split("\t");
 				if(arr2[0].trim() != "") {
 					postable += '<tr><td style="width:25%;">' + arr2[0] + '</td><td style="width:25%;"> ' + arr2[1] + ' </td></tr>';
 					postagcloud += '<span class="token">' + arr2[0] + '</span><span class="pos-tag">' + arr2[1]+ '</span>';
 				}
-			}
+			}*/
+
+			 if (data["status"].toLowerCase() == "success") {
+				 for (var i=0; i<data.pos_annotations.length; i++) {
+					 var cur_token = data.pos_annotations[i]["token"];
+					 var cur_tag = data.pos_annotations[i]["feature"];
+					 if(cur_token.trim() != "") {
+						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+					 }
+				 }
+				 for (var i=0; i<data.morph.length; i++) {
+					 var cur_token = data.morph[i]["token"];
+					 cur_token = cur_token.replace(/^\^/g, "");
+					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
+					 if(cur_token.trim() != "") {
+						 motable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+					 }
+				 }
+			 }
 			postable += '</table>';
+			motable += '</table>';
 			postagcloud += '</div>';
 
 			//$("#postagresult").text(tgttext);
 			$("#postagresult").html(postable);
 			$("#postagresult").html(postagcloud);
+			$("#morphresult").append(motable);
+
 			$('#download').prop('disabled', false);
 			$("#savetype").show();
 			$("#download").show();
@@ -271,3 +295,23 @@ function empty(){
 //	alert("aim here");
 	$("#input").empty();
 }
+
+//escape html characters
+var entityMap = {
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	'"': '&quot;',
+	"'": '&#39;',
+	'/': '&#x2F;',
+	'`': '&#x60;',
+	'=': '&#x3D;'
+};
+
+//escapeHTML function
+function escapeHtml(string) {
+	return String(string).replace(/[&<>"'`=\/]/g, function(s) {
+		return entityMap[s];
+	});
+}
+

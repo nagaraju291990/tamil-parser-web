@@ -1,0 +1,5 @@
+^oci/oci<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>/oci<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$	^UNK/*UNK$
+^minYcAram/minYcAram<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$	^UNK/*UNK$
+^rawwu/ram<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>$^:/:<lcat:punc>$	^UNK/*UNK$
+^vivacAyikalY/vivacAyi<lcat:noun><gen:any><num:pl><per:3><case:o><cm:obl><suffix:obl>/vivacAyi<lcat:noun><gen:any><num:pl><per:3><case:d><cm:0><suffix:0>$	^UNK/*UNK$
+^kaNtanYam/kaNtanYam<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$	^UNK/*UNK$
