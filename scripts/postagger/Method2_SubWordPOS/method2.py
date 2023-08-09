@@ -56,7 +56,7 @@ class BiLSTMTagger(nn.Module):
         lstm_out, self.hidden = self.lstm(
             embeds.view(len(embeds), 1, -1), self.hidden)
 
-        self.hidden_dim = hidden_dim
+        #self.hidden_dim = hidden_dim
         lstm_out = self.dropout(lstm_out)
 
         # get the scores for the most likely tag for a word
@@ -66,8 +66,10 @@ class BiLSTMTagger(nn.Module):
         return tag_scores
 
 tag2idx = {'PRON': 0, 'DET': 1, 'ADJ': 2, 'NOUN': 3, 'CCONJ': 4, 'ADV': 5, 'VERB': 6, 'PUNCT': 7, 'PROPN': 8, 'ADP': 9, 'NUM': 10, 'AUX': 11, 'SCONJ': 12, 'PART': 13, 'SYM': 14, 'CONJ': 15, 'INTJ': 16}
-idx2tag = {0: 'PRON', 1: 'DET', 2: 'ADJ', 3: 'NOUN', 4: 'CCONJ', 5: 'ADV', 6: 'VERB', 7: 'PUNCT', 8: 'PROPN', 9: 'ADP', 10: 'NUM', 11: 'AUX', 12: 'SCONJ', 13: 'PART', 14: 'SYM', 15: 'CONJ', 16: 'INTJ'
-        self.hidden_dim = hidden_dimnizer.get_vocab()
+idx2tag = {0: 'PRON', 1: 'DET', 2: 'ADJ', 3: 'NOUN', 4: 'CCONJ', 5: 'ADV', 6: 'VERB', 7: 'PUNCT', 8: 'PROPN', 9: 'ADP', 10: 'NUM', 11: 'AUX', 12: 'SCONJ', 13: 'PART', 14: 'SYM', 15: 'CONJ', 16: 'INTJ'}
+
+#self.hidden_dim = hidden_dimnizer.get_vocab()
+model_vocab = tokenizer.get_vocab()
 EMBEDDING_SIZE = 300
 embedding_weights = np.random.uniform(-0.05, 0.05, size=(len(model_vocab), EMBEDDING_SIZE))
 embedding_weights = torch.from_numpy(embedding_weights)
@@ -82,7 +84,7 @@ model = BiLSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(model_vocab), len(tag2idx), 
 loss_function = nn.NLLLoss()
 optimizer = optim.Adam(model.parameters())
 
-PATH = "/var/www/html/tamil-parser/scripts/postagger/Method2_SubWordPOS/Tamil_POS_BertTokenizer_Method2_savedModel.pth
+PATH = "/var/www/html/tamil-parser/scripts/postagger/Method2_SubWordPOS/Tamil_POS_BertTokenizer_Method2_savedModel.pth"
 model.load_state_dict(torch.load(PATH))
 
 import sys

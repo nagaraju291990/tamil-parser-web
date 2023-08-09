@@ -101,7 +101,7 @@ function submittext(){
 			
 			var postable ='<div class="panel-heading">Parts of Speech</div><table class="table table-bordered table-striped table-condensed table-responsive">';
 			var motable ='<div class="panel-heading">Morph Analysis</div><table class="table table-bordered table-striped table-condensed table-responsive">';
-			var postagcloud ='<div class="pos-tag-cloud">';
+			var postagcloud = '';//'<div class="pos-tag-cloud">';
 			postable += '<tr class="success"><th>Token</th><th>POS</th></tr>';
 			/*var arr = tgttext.split("\n");
 			for(var i=0;i<arr.length-1;i++) {
@@ -112,21 +112,35 @@ function submittext(){
 				}
 			}*/
 
+			postagcloud += '<div class="col-md-12"><h5>Model1</h5></div>';
+			postagcloud +='<div class="pos-tag-cloud">';
 			 if (data["status"].toLowerCase() == "success") {
-				 for (var i=0; i<data.pos_annotations.length; i++) {
-					 var cur_token = data.pos_annotations[i]["token"];
-					 var cur_tag = data.pos_annotations[i]["feature"];
+				 for (var i=0; i<data.pos_annotations.method1.length; i++) {
+					 var cur_token = data.pos_annotations["method1"][i]["token"];
+					 var cur_tag = data.pos_annotations["method1"][i]["feature"];
 					 if(cur_token.trim() != "") {
 						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
 						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
 					 }
 				 }
+			postagcloud += '</div></div><hr></hr>';
+			postagcloud += '<div class="col-md-12"><h5>Model2</h5></div>';
+			postagcloud +='<div class="pos-tag-cloud">';
+				 for (var i=0; i<data.pos_annotations.method2.length; i++) {
+					 var cur_token = data.pos_annotations["method2"][i]["token"];
+					 var cur_tag = data.pos_annotations["method2"][i]["feature"];
+					 if(cur_token.trim() != "") {
+						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+					 }
+				 }
+				 postagcloud += '</div></div><hr></hr>';
 				 for (var i=0; i<data.morph.length; i++) {
 					 var cur_token = data.morph[i]["token"];
 					 cur_token = cur_token.replace(/^\^/g, "");
 					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
 					 if(cur_token.trim() != "") {
-						 motable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
 					 }
 				 }
 			 }
@@ -137,7 +151,7 @@ function submittext(){
 			//$("#postagresult").text(tgttext);
 			$("#postagresult").html(postable);
 			$("#postagresult").html(postagcloud);
-			$("#morphresult").append(motable);
+			$("#morphresult").html(motable);
 
 			$('#download').prop('disabled', false);
 			$("#savetype").show();

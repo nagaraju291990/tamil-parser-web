@@ -5,10 +5,16 @@ $output_type = $_POST["output_type"];
 $tokens = explode(" ", $text);
 $fp = fopen("in.txt","w");
 $write_text = '';
-#foreach($tokens as $token) {
-#	$write_text .= $token . "\tUNK\n";
-#}
 fwrite($fp,$text);
+fclose($fp);
+
+$tokens = explode(" ", $text);
+$fp = fopen("in_utf.txt","w");
+$write_text = '';
+foreach($tokens as $token) {
+	$write_text .= $token . "\n";
+}
+fwrite($fp,$write_text);
 fclose($fp);
 
 header('Content-Type: application/json');
@@ -21,7 +27,7 @@ header('Content-Type: application/json');
 $postag_command1 = "python3 postagger/Method1_WordPOS/method1.py in.txt > pos_method1.txt";
 $postag_command2 = "python3 postagger/Method2_SubWordPOS/method2.py in.txt > pos_method2.txt";
 
-$convertor_utf2wx_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=utf -t=wx -l=tam -i=in.txt > in_wx.txt";
+$convertor_utf2wx_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=utf -t=wx -l=tam -i=in_utf.txt > in_wx.txt";
 
 #$convertor_wx2utf_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=wx -t=utf -l=tam -i=in_wx_mo.txt > in_utf_mo.txt";
 
