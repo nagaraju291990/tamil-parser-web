@@ -80,11 +80,14 @@ function submittext(){
 		return false;
 	}
 
+	srctext = tokenize(srctext);
+	srctext = srctext.trim();
+	$("#input").text(srctext);
 	if(output_type == "") {
 		output_type = "pos";
 	}
 
-	$("#loading").show();
+	$("#spinner1").show();
 	$("#postagresult").empty();
 	//Ajax call to upload and submit for conversion
 	$.ajax({
@@ -93,9 +96,9 @@ function submittext(){
 		//data: "&from=" + from + "&to=" + to + "&text=" + srctext,
 		data: "&text=" + srctext + "&output_type=" + output_type,
 		header:"application/x-www-form-urlencoded",
-		async:false,
+		//async:false,
 		success: function (data) {
-			$("#loading").hide();
+			$("#spinner1").hide();
 			//alert(data);
 			var tgttext = data;
 			
@@ -158,7 +161,8 @@ function submittext(){
 			$("#download").show();
 		},
 		error:function  (jqXHR, exception) {
-			$("#loading").hide();
+			
+			$("#spinner1").hide();
 			var msg = '';
 			if (jqXHR.status === 0) {
 				msg = 'Not connect.\n Verify Network.';
@@ -331,3 +335,8 @@ function escapeHtml(string) {
 	});
 }
 
+function tokenize(string) {
+    string = string.replace(/([\.,<>\?\/\;\"\':\{\}\[\]\(\)\!@#$])/g, " $1");
+    console.log(string);
+    return string;
+}

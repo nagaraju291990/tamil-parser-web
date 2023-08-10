@@ -14,18 +14,21 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="css/styles.css" />
 		<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+		
 		
 		<!--<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.js" ></script>-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/convert.js" ></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 		<meta charset='utf-8'>
+		<link rel="stylesheet" href="css/spinner.css">
 	</head>
 	<body>
 		<div class="container">
 			<!--common for file and text output-->
 			<!--upload form-->
-			<h3 class="text-center" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tamil Syntactic Parser">தமிழ்  தொடரியல் பகுப்பாய்வி </h3>
+			<h3 class="text-center" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tamil Syntactic Parser">தமிழ்  தொடரியல் பகுப்பாய்வி <br><h4 class="text-center">Tamil Syntactic Parser </h4></h3>
 			<div class="row justify-content-md-center">	
 				<div class="col-2">
 					<ul class="list-group">
@@ -35,12 +38,11 @@
 					</ul>
 				</div>
 				<div class="col-10">
-					
 					<img style="margin-left:2%;height:4%;position:relative;" id="loading" src="images/processing.gif"></img>
 					<br>
 					<div class="row">
 						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8 col-md-2">
-							<textarea class="form-control" id="input">புராணங்கள் , கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும் .</textarea>
+							<textarea class="form-control" id="input">புராணங்கள், கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும்.</textarea>
 						</div>
 						<div style="margin-top: 1%;" class="col-sm-offset-2 col-sm-8 col-lg-8 col-md-offset-2">
 							<select class="form-control" multiple id="output_type">
@@ -70,19 +72,27 @@
 						</div>
 					</div>
 					
-					<div class="row">
+					<div align="center" class="col-sm-offset-4 row">
+
+						<div align="center" style="display: none;" id="spinner1" class="text-center spinner">
+						    Loading
+						    <div class="spinner-sector spinner-sector-red"></div>
+						    <div class="spinner-sector spinner-sector-blue"></div>
+						    <div class="spinner-sector spinner-sector-green"></div>
+  						</div>
 						<div class="col-md-offset-2 col-lg-10 col-sm-10 col-md-10" id="postagresult">
 						</div>
 						<div class="col-md-offset-2 col-lg-10 col-sm-10 col-md-10" id="morphresult">
 						</div>
 					</div>
-					<select style="background-color:#7ba733;color:#fff;" name="savetype"  id="savetype" class="form-control"><option value="" >Download</option>
-					<option disabled="true"></option>
-					<option value="txt">.txt </option>
-				</select>
-				<button id="download" type="button" disabled class="btn btn-default navbar-btn" onclick="saveasfile();">
-				Download
-				</button>
+					<select style="background-color:#7ba733;color:#fff;" name="savetype"  id="savetype" class="form-control">
+						<option value="" >Download</option>
+						<option disabled="true"></option>
+						<option value="txt">.txt </option>
+					</select>
+					<button id="download" type="button" disabled class="btn btn-default navbar-btn" onclick="saveasfile();">
+						Download
+					</button>
 				</div> <!-- end of form group div -->
 			
 			</div>
