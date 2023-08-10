@@ -116,28 +116,36 @@ function submittext(){
 				}
 			}*/
 
-			postagcloud += '<div class="col-md-12"><h5>Model1</h5></div>';
-			postagcloud +='<div class="pos-tag-cloud">';
-			 if (data["status"].toLowerCase() == "success") {
-				 for (var i=0; i<data.pos_annotations.method1.length; i++) {
-					 var cur_token = data.pos_annotations["method1"][i]["token"];
-					 var cur_tag = data.pos_annotations["method1"][i]["feature"];
-					 if(cur_token.trim() != "") {
-						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
-						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+			if (data["status"].toLowerCase() == "success") {
+				var pos_methods = Object.keys(data.pos_annotations);
+				for (var i = 0; i < pos_methods.length; i++) { 
+					postagcloud += '<div class="col-md-12"><h5>'+ pos_methods[i] +'</h5></div>';
+					postagcloud +='<div class="pos-tag-cloud">';
+					var cur_method = pos_methods[i];
+					console.log(cur_method);
+					console.log(data.pos_annotations[cur_method]);
+					 for (var j=0; j<data.pos_annotations[cur_method].length; j++) {
+					 	
+						 var cur_token = data.pos_annotations[cur_method][j]["token"];
+						 var cur_tag =data.pos_annotations[cur_method][j]["feature"];
+						 if(cur_token.trim() != "") {
+							 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+							 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+						 }
 					 }
-				 }
-			postagcloud += '</div></div><hr></hr>';
-			postagcloud += '<div class="col-md-12"><h5>Model2</h5></div>';
-			postagcloud +='<div class="pos-tag-cloud">';
-				 for (var i=0; i<data.pos_annotations.method2.length; i++) {
-					 var cur_token = data.pos_annotations["method2"][i]["token"];
-					 var cur_tag = data.pos_annotations["method2"][i]["feature"];
-					 if(cur_token.trim() != "") {
-						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
-						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
-					 }
-				 }
+					postagcloud += '</div></div><hr></hr>';
+				}
+
+			// postagcloud += '<div class="col-md-12"><h5>Model2</h5></div>';
+			// postagcloud +='<div class="pos-tag-cloud">';
+			// 	 for (var i=0; i<data.pos_annotations.method2.length; i++) {
+			// 		 var cur_token = data.pos_annotations["method2"][i]["token"];
+			// 		 var cur_tag = data.pos_annotations["method2"][i]["feature"];
+			// 		 if(cur_token.trim() != "") {
+			// 			 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+			// 			 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+			// 		 }
+			// 	 }
 				 postagcloud += '</div></div><hr></hr>';
 				 for (var i=0; i<data.morph.length; i++) {
 					 var cur_token = data.morph[i]["token"];
