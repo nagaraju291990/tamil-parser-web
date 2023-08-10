@@ -1,3 +1,0 @@
-^wamilYY/wamilYY<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>/wamilYY<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$
-^woVtariyal/woVtariyal<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>/woVtariyal<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$
-^pakuppAyvi/*pakuppAyvi$
