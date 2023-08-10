@@ -79,7 +79,8 @@ function submittext(){
 		alert("Provide some text...");
 		return false;
 	}
-
+	srctext = tokenize(srctext);
+	$("#input").text(srctext);
 	if(output_type == "") {
 		output_type = "pos";
 	}
@@ -317,3 +318,8 @@ function escapeHtml(string) {
 	});
 }
 
+function tokenize(string) {
+	string = string.replace(/([\u0B80–\u0BFFA-Za-z0-9]+)([\.,<>\?\/\;\"\':\{\}\[\]\(\)\!@#$])/g, "$1 $2");
+	console.log(string);
+	return string;
+}

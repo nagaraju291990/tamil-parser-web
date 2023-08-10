@@ -26,11 +26,22 @@
 			<!--common for file and text output-->
 			<!--upload form-->
 			<h3 class="text-center" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tamil Syntactic Parser">தமிழ்  தொடரியல் பகுப்பாய்வி </h3>
-			<div class="row justify-content-md-center">	
+			<div class="row justify-content-md-center">
 				<div class="col-2">
 					<ul class="list-group">
-						<li class="list-group-item active" aria-current="true">About</li>
-						<li class="list-group-item">Guidelines</li>
+						<li class="list-group-item" aria-current="true">About</li><li class="list-group-item"></li>
+						<div class="btn-group dropend">
+							<li class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							Guidelines
+							</li>
+							<ul class="dropdown-menu">
+								<li><a class="dropdown-item" href="#">POS</a></li>
+								<li><a class="dropdown-item" href="#">Morph</a></li>
+								<li><a class="dropdown-item" href="#">Syntax</a></li>
+								<!--<li><hr class="dropdown-divider"></li>
+								<li><a class="dropdown-item" href="#">Separated link</a></li>-->
+							</ul>
+						</div>
 						<li class="list-group-item">Resources</li>
 					</ul>
 				</div>
@@ -71,9 +82,9 @@
 					</div>
 					
 					<div class="row">
-						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8" id="postagresult">
+						<div class="col-md-offset-2 col-lg-10 col-sm-10 col-md-10" id="postagresult">
 						</div>
-						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8" id="morphresult">
+						<div class="col-md-offset-2 col-lg-10 col-sm-10 col-md-10" id="morphresult">
 						</div>
 					</div>
 					<select style="background-color:#7ba733;color:#fff;" name="savetype"  id="savetype" class="form-control"><option value="" >Download</option>
@@ -84,7 +95,7 @@
 				Download
 				</button>
 				</div> <!-- end of form group div -->
-			
+				
 			</div>
 			
 			<div class="progressbar">
