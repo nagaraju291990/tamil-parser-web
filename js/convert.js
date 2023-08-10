@@ -89,6 +89,7 @@ function submittext(){
 
 	$("#spinner1").show();
 	$("#postagresult").empty();
+	$("#morphresult").empty();
 	//Ajax call to upload and submit for conversion
 	$.ajax({
 		type: 'POST',
