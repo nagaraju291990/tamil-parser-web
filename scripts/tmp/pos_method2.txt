@@ -1,15 +1,12 @@
-புராணங்கள்	PUNCT
-	
+புராணங்கள்	NOUN
 ,	PUNCT
-கட்டுக்கதைகள்	PROPN
-மற்றும்	PROPN
+[UNK]	NOUN
+மற்றும்	CCONJ
 நம்பிக்கைகள்	NOUN
-இந்திய	ADJ
+இந்திய	PROPN
 வாழ்க்கை	NOUN
 முறையின்	NOUN
-ஒரு	_
+ஒரு	DET
 பகுதி	NOUN
 ஆகும்	VERB
-	
 .	PUNCT
-	
