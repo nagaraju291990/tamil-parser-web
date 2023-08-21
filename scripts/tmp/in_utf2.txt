@@ -5,8 +5,6 @@
 	UNK
 	UNK
 	UNK
-	UNK
-	UNK
 ,	UNK
 கட்டுக்கதைகள்	UNK
 மற்றும்	UNK
@@ -17,8 +15,6 @@
 ஒரு	UNK
 பகுதி	UNK
 ஆகும்	UNK
-	UNK
-	UNK
 	UNK
 	UNK
 	UNK
