@@ -28,7 +28,14 @@
 		<div class="container">
 			<!--common for file and text output-->
 			<!--upload form-->
-			<h3 class="text-center" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tamil Syntactic Parser">தமிழ்  தொடரியல் பகுப்பாய்வி <br><h4 class="text-center">Tamil Syntactic Parser </h4></h3>
+			<div class="row">
+				<div class="col-2">
+					<img class="img-responsive" alt="IIIT HYDERABAD LTRC" src="images/iiit-logo.png"></img>
+				</div>
+				<div class="col-10">
+					<h3 class="text-center" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tamil Syntactic Parser">தமிழ்  தொடரியல் பகுப்பாய்வி <br><h4 class="text-center">Tamil Syntactic Parser </h4></h3>
+				</div>
+			</div>
 			<div class="row justify-content-md-center">	
 				<div class="col-2">
 					<ul class="list-group">
@@ -38,8 +45,6 @@
 					</ul>
 				</div>
 				<div class="col-10">
-					<img style="margin-left:2%;height:4%;position:relative;" id="loading" src="images/processing.gif"></img>
-					<br>
 					<div class="row">
 						<div class="col-md-offset-2 col-lg-8 col-sm-8 col-md-8 col-md-2">
 							<textarea class="form-control" id="input">புராணங்கள், கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும்.</textarea>
@@ -96,13 +101,14 @@
 				</div> <!-- end of form group div -->
 			
 			</div>
-			
-			<div class="progressbar">
-				<div class="bar">
+			<div class="col-10 footer" style="position: fixed;bottom: 0;">
+				<!-- Copyright -->
+				<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+				  <!--© 2023 Copyright:-->
+				  <a class="text-dark" target="_blank" href="https://www.tamilvu.org/">Funded by Tamil Virtual Academy</a>
+				  Developed By 
+				  <a class="text-dark" target="_blank" href="">LTRC(Language Te</a>
 				</div>
-				</div> <!-- end of progressbar div-->
-				<!--<div contenteditable="true" id="result"></div>--> <!-- end of result div-->
-				<!--			<textarea onkeypress="txtAreaId(this.id);" id="result-text"></textarea> -->
-				</div>	<!-- end of container div -->
+			</div>
 			</body>
 		</html>
