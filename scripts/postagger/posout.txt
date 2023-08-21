@@ -1,5 +1,4 @@
-புராணங்கள்	PUNCT
-	
+புராணங்கள்	PROPN
 ,	PUNCT
 கட்டுக்கதைகள்	PROPN
 மற்றும்	PROPN
@@ -8,8 +7,7 @@
 வாழ்க்கை	NOUN
 முறையின்	NOUN
 ஒரு	_
-பகுதி	NOUN
-ஆகும்	VERB
-	
+பகுதி	VERB
+ஆகும்	AUX
 .	PUNCT
 	

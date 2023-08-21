@@ -1,5 +1,4 @@
-புராணங்கள்	MORE	்கள்	கள்	ள்	்	புராணங்	புராணங	புராண	புரா	புர	பு	ப	UNK	PUNCT
-
+புராணங்கள்	MORE	்கள்	கள்	ள்	்	புராணங்	புராணங	புராண	புரா	புர	பு	ப	UNK	PROPN
 ,	LESS	LL	LL	LL	,	LL	LL	LL	LL	LL	LL	,	UNK	PUNCT
 கட்டுக்கதைகள்	MORE	ைகள்	கள்	ள்	்	கட்டுக்	கட்டுக	கட்டு	கட்ட	கட்	கட	க	UNK	PROPN
 மற்றும்	MORE	றும்	ும்	ம்	்	மற்றும்	மற்றும	மற்று	மற்ற	மற்	மற	ம	UNK	PROPN
@@ -8,8 +7,7 @@
 வாழ்க்கை	MORE	க்கை	்கை	கை	ை	வாழ்க்க	வாழ்க்	வாழ்க	வாழ்	வாழ	வா	வ	UNK	NOUN
 முறையின்	MORE	யின்	ின்	ன்	்	முறையின	முறையி	முறைய	முறை	முற	மு	ம	UNK	NOUN
 ஒரு	MORE	LL	ஒரு	ரு	ு	LL	LL	LL	LL	ஒரு	ஒர	ஒ	UNK	_
-பகுதி	MORE	குதி	ுதி	தி	ி	LL	LL	பகுதி	பகுத	பகு	பக	ப	UNK	NOUN
-ஆகும்	MORE	கும்	ும்	ம்	்	LL	LL	ஆகும்	ஆகும	ஆகு	ஆக	ஆ	UNK	VERB
-
+பகுதி	MORE	குதி	ுதி	தி	ி	LL	LL	பகுதி	பகுத	பகு	பக	ப	UNK	VERB
+ஆகும்	MORE	கும்	ும்	ம்	்	LL	LL	ஆகும்	ஆகும	ஆகு	ஆக	ஆ	UNK	AUX
 .	LESS	LL	LL	LL	.	LL	LL	LL	LL	LL	LL	.	UNK	PUNCT
 
