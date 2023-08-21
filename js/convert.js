@@ -79,14 +79,17 @@ function submittext(){
 		alert("Provide some text...");
 		return false;
 	}
+
 	srctext = tokenize(srctext);
+	srctext = srctext.trim();
 	$("#input").text(srctext);
 	if(output_type == "") {
 		output_type = "pos";
 	}
 
-	$("#loading").show();
+	$("#spinner1").show();
 	$("#postagresult").empty();
+	$("#morphresult").empty();
 	//Ajax call to upload and submit for conversion
 	$.ajax({
 		type: 'POST',
@@ -94,15 +97,15 @@ function submittext(){
 		//data: "&from=" + from + "&to=" + to + "&text=" + srctext,
 		data: "&text=" + srctext + "&output_type=" + output_type,
 		header:"application/x-www-form-urlencoded",
-		async:false,
+		//async:false,
 		success: function (data) {
-			$("#loading").hide();
+			$("#spinner1").hide();
 			//alert(data);
 			var tgttext = data;
 			
 			var postable ='<div class="panel-heading">Parts of Speech</div><table class="table table-bordered table-striped table-condensed table-responsive">';
 			var motable ='<div class="panel-heading">Morph Analysis</div><table class="table table-bordered table-striped table-condensed table-responsive">';
-			var postagcloud ='<div class="pos-tag-cloud">';
+			var postagcloud = '';//'<div class="pos-tag-cloud">';
 			postable += '<tr class="success"><th>Token</th><th>POS</th></tr>';
 			/*var arr = tgttext.split("\n");
 			for(var i=0;i<arr.length-1;i++) {
@@ -113,21 +116,43 @@ function submittext(){
 				}
 			}*/
 
-			 if (data["status"].toLowerCase() == "success") {
-				 for (var i=0; i<data.pos_annotations.length; i++) {
-					 var cur_token = data.pos_annotations[i]["token"];
-					 var cur_tag = data.pos_annotations[i]["feature"];
-					 if(cur_token.trim() != "") {
-						 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
-						 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+			if (data["status"].toLowerCase() == "success") {
+				var pos_methods = Object.keys(data.pos_annotations);
+				for (var i = 0; i < pos_methods.length; i++) { 
+					postagcloud += '<div class="col-md-12"><h5>'+ pos_methods[i] +'</h5></div>';
+					postagcloud +='<div class="pos-tag-cloud">';
+					var cur_method = pos_methods[i];
+					console.log(cur_method);
+					console.log(data.pos_annotations[cur_method]);
+					 for (var j=0; j<data.pos_annotations[cur_method].length; j++) {
+					 	
+						 var cur_token = data.pos_annotations[cur_method][j]["token"];
+						 var cur_tag =data.pos_annotations[cur_method][j]["feature"];
+						 if(cur_token.trim() != "") {
+							 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+							 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+						 }
 					 }
-				 }
+					postagcloud += '</div></div><hr></hr>';
+				}
+
+			// postagcloud += '<div class="col-md-12"><h5>Model2</h5></div>';
+			// postagcloud +='<div class="pos-tag-cloud">';
+			// 	 for (var i=0; i<data.pos_annotations.method2.length; i++) {
+			// 		 var cur_token = data.pos_annotations["method2"][i]["token"];
+			// 		 var cur_tag = data.pos_annotations["method2"][i]["feature"];
+			// 		 if(cur_token.trim() != "") {
+			// 			 postable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+			// 			 postagcloud += '<span class="token">' + cur_token + '</span><span class="pos-tag">' + cur_tag + '</span>';
+			// 		 }
+			// 	 }
+				 postagcloud += '</div></div><hr></hr>';
 				 for (var i=0; i<data.morph.length; i++) {
 					 var cur_token = data.morph[i]["token"];
 					 cur_token = cur_token.replace(/^\^/g, "");
 					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
 					 if(cur_token.trim() != "") {
-						 motable += '<tr><td style="width:25%;">' + cur_token + '</td><td style="width:25%;"> ' + cur_tag + ' </td></tr>';
+						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
 					 }
 				 }
 			 }
@@ -138,14 +163,15 @@ function submittext(){
 			//$("#postagresult").text(tgttext);
 			$("#postagresult").html(postable);
 			$("#postagresult").html(postagcloud);
-			$("#morphresult").append(motable);
+			$("#morphresult").html(motable);
 
 			$('#download').prop('disabled', false);
 			$("#savetype").show();
 			$("#download").show();
 		},
 		error:function  (jqXHR, exception) {
-			$("#loading").hide();
+			
+			$("#spinner1").hide();
 			var msg = '';
 			if (jqXHR.status === 0) {
 				msg = 'Not connect.\n Verify Network.';
@@ -319,7 +345,7 @@ function escapeHtml(string) {
 }
 
 function tokenize(string) {
-	string = string.replace(/([\u0B80–\u0BFFA-Za-z0-9]+)([\.,<>\?\/\;\"\':\{\}\[\]\(\)\!@#$])/g, "$1 $2");
-	console.log(string);
-	return string;
+    string = string.replace(/([\.,<>\?\/\;\"\':\{\}\[\]\(\)\!@#$])/g, " $1");
+    console.log(string);
+    return string;
 }

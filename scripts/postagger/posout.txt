@@ -1,6 +1,15 @@
-ஓசி	PROPN
-மின்சாரம்	PROPN
-ரத்து:	PROPN
-விவசாயிகள்	PROPN
-கண்டனம்	PROPN
+புராணங்கள்	PUNCT
+	
+,	PUNCT
+கட்டுக்கதைகள்	PROPN
+மற்றும்	PROPN
+நம்பிக்கைகள்	NOUN
+இந்திய	ADJ
+வாழ்க்கை	NOUN
+முறையின்	NOUN
+ஒரு	_
+பகுதி	NOUN
+ஆகும்	VERB
+	
+.	PUNCT
 	
