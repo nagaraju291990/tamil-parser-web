@@ -108,7 +108,8 @@ if($ret_var4 == 0) {
 			// process the line read.
 			//echo "$line";
 			$morph_arr = explode("/",$line);
-			$morph_data[] = array('token'=>$morph_arr[0], 'feature'=>$morph_arr[1]);
+			#$morph_data[] = array('token'=>$morph_arr[0], 'feature'=>$morph_arr[1]);
+			$morph_data[] = array('token'=>$morph_arr[0], 'feature'=>array_slice($morph_arr,1));
 		}
 		fclose($fp_out);
 	} else {
