@@ -95,3 +95,10 @@ textarea{
   color: #333;
 }
 
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 3%;
+    width: 100%;
+	background-color: lightblue;
+}
