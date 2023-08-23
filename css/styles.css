@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
 html,body{
-	font-family:rokkit;
+	font-family:'Noto Sans', sans-serif;
 	margin-left:1%;
 	margin-right:2%;
 }
-
 #mandatory{
 	color:red;
 	font-size:22px;
@@ -96,9 +97,16 @@ textarea{
 }
 
 .footer {
-    position: fixed;
-    height: 100px;
-    bottom: 3%;
+    position: relative;
+    height: auto;
+    bottom: 1%;
     width: 100%;
 	background-color: lightblue;
+}
+.sidebar li .submenu{ 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	padding-left: 1rem; 
+	padding-right: 1rem;
 }

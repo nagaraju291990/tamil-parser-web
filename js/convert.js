@@ -5,6 +5,31 @@ var noofpages=0; var flag=0;
 
 //hide the image initially
 $(document).ready(function(){
+	document.querySelectorAll('.sidebar .nav-link').forEach(function(element){
+	  
+		element.addEventListener('click', function (e) {
+	
+		  let nextEl = element.nextElementSibling;
+		  let parentEl  = element.parentElement;	
+	
+			if(nextEl) {
+				e.preventDefault();	
+				let mycollapse = new bootstrap.Collapse(nextEl);
+				
+				if(nextEl.classList.contains('show')){
+				  mycollapse.hide();
+				} else {
+					mycollapse.show();
+					// find other submenus with class=show
+					var opened_submenu = parentEl.parentElement.querySelector('.submenu.show');
+					// if it exists, then close all of them
+					if(opened_submenu){
+					  new bootstrap.Collapse(opened_submenu);
+					}
+				}
+			}
+		}); // addEventListener
+	  }) // forEach
 	$("#loading").hide();
 	$("#savetype").hide();
 	$("#download").hide();
@@ -152,7 +177,7 @@ function submittext(){
 					 cur_token = cur_token.replace(/^\^/g, "");
 					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
 					 if(cur_token.trim() != "") {
-						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
+						 motable += '<tr><td style="width:10%;">' + convert_tam_wx2utf(cur_token) + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
 					 }
 				 }
 			 }
@@ -349,3 +374,7 @@ function tokenize(string) {
     console.log(string);
     return string;
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+	
+  }); 

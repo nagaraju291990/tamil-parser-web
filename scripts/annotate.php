@@ -32,8 +32,9 @@ $postag_command1 = "python3 postagger/Method1_WordPOS/method1.py in.txt > pos_me
 $postag_command2 = "python3 postagger/Method2_SubWordPOS/method2.py in.txt > pos_method2.txt";
 
 $convertor_utf2wx_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=utf -t=wx -l=tam -i=in_utf.txt > in_wx.txt";
+#$convertor_wx2utf_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=wx -t=utf -l=tam -i=in_temp.txt > in_temp_utf.txt";
 $postag_command3 = "sh postagger/postagger.sh /var/www/html/tamil-parser/ in_utf2.txt";
-#$convertor_wx2utf_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=wx -t=utf -l=tam -i=in_wx_mo.txt > in_utf_mo.txt";
+$convertor_wx2utf_command = "perl /home/user/Tamil-Parser/tools/convertor-indic-1.4.7/convertor_indic.pl  -f=text -s=wx -t=utf -l=tam -i=in_wx_mo.txt > in_utf_mo.txt";
 
 $morph_command = "lt-proc -c  mobin/tam_apertium_v2.1.moobj < in_wx.txt > in_wx_mo.txt";
 
@@ -42,7 +43,7 @@ exec($postag_command2, $out2, $ret_var2);
 exec($postag_command3, $out3, $ret_var33);
 exec($convertor_utf2wx_command, $out3, $ret_var3);
 exec($morph_command, $out4, $ret_var4);
-#exec($convertor_wx2utf_command, $out4, $ret_var4);
+exec($convertor_wx2utf_command, $out4, $ret_var4);
 
 
 //get postag output
@@ -97,9 +98,9 @@ if($ret_var33 == 0) {
 	$pos_data3[] = array('pos'=>"Please try later");
 	#echo "Technical error..Please try again later!<br>";
 }
-$pos['method1'] = $pos_data;
-$pos['method2'] = $pos_data2;
-$pos['method3'] = $pos_data3;
+$pos['Model1'] = $pos_data;
+$pos['Model2'] = $pos_data2;
+$pos['Model3'] = $pos_data3;
 //get morph output
 if($ret_var4 == 0) {
 	$fp_out = fopen("in_wx_mo.txt","r");
@@ -109,6 +110,8 @@ if($ret_var4 == 0) {
 			//echo "$line";
 			$morph_arr = explode("/",$line);
 			#$morph_data[] = array('token'=>$morph_arr[0], 'feature'=>$morph_arr[1]);
+			exec($convertor_utf2wx_command, $out4, $ret_var3);
+
 			$morph_data[] = array('token'=>$morph_arr[0], 'feature'=>array_slice($morph_arr,1));
 		}
 		fclose($fp_out);
