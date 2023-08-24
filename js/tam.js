@@ -19,6 +19,9 @@ function convert_tam_wx2utf(text) {
 	unicodeValue_vowels["O"]='\u0B94';
 //	unicodeValue_vowels["z"] = '\u0B81';	//z
 	unicodeValue["lY"]='\u0BB3';
+	unicodeValue["lYY"]='\u0BB3';
+	unicodeValue["nY"]='\u0BA9';
+	unicodeValue["rY"]='\u0BB1';
 	unicodeValue["EY"]='\u0BC5';
 	unicodeValue["eV"]='\u0BC6';
 	unicodeValue["OY"]='\u0BC9';
@@ -181,11 +184,11 @@ function convert_tam_wx2utf(text) {
 	});
 
     text=text.replace(/(lYY)([AiIuUeEoO])([MHz])/g, function() {
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]] + unicodeValue[3];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]] + unicodeValue[3];
 	});
 
     text=text.replace(/(lYY)([AiIuUeEoO])/g, function(){
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]];
 	});
 
     text=text.replace(/(lYY)a([MHz])/g, function() {
@@ -231,11 +234,11 @@ function convert_tam_wx2utf(text) {
 	});
 
     text=text.replace(/(lYY)([AiIuUeEoO])([MHz])/g, function() {
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]] + unicodeValue[3];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]] + unicodeValue[3];
 	});
 
     text=text.replace(/(lYY)([AiIuUeEoO])/g, function(){
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]];
 	});
 
     text=text.replace(/(lYY)a([MHz])/g, function() {
@@ -282,11 +285,11 @@ function convert_tam_wx2utf(text) {
 	});
 
     text=text.replace(/(lY)([AiIuUeEoO])([MHz])/g, function() {
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]] + unicodeValue[3];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]] + unicodeValue[3];
 	});
 
     text=text.replace(/(lY)([AiIuUeEoO])/g, function(){
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]];
 	});
 
     text=text.replace(/(lY)a([MHz])/g, function() {
@@ -332,11 +335,11 @@ function convert_tam_wx2utf(text) {
 	});
 
     text=text.replace(/(nY)([AiIuUeEoO])([MHz])/g, function() {
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]] + unicodeValue[3];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]] + unicodeValue[3];
 	});
 
     text=text.replace(/(nY)([AiIuUeEoO])/g, function(){
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]];
 	});
 
     text=text.replace(/(nY)a([MHz])/g, function() {
@@ -382,11 +385,11 @@ function convert_tam_wx2utf(text) {
 	});
 
     text=text.replace(/(rY)([AiIuUeEoO])([MHz])/g, function() {
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]] + unicodeValue[3];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]] + unicodeValue[3];
 	});
 
     text=text.replace(/(rY)([AiIuUeEoO])/g, function(){
-		return unicodeValue[arguments[1]] + unicodeValue[arguments[2]];
+		return unicodeValue[arguments[1]] + unicodeValue_vowels[arguments[2]];
 	});
 
     text=text.replace(/(rY)a([MHz])/g, function() {
@@ -675,6 +678,9 @@ function convert_tam_utf2wx(text) {
 //	unicodeValue["\u0B81"] = 'z';	//z
 	unicodeValue["\u0BB3"] = 'lY';
 	unicodeValue["\u0BC5"] = 'EY';
+	unicodeValue["\u0BB3"] = 'lYY';
+	unicodeValue["\u0BA9"] = 'nY';
+	unicodeValue["\u0BB1"] = 'rY';
 	unicodeValue["\u0BC6"] = 'eV';
 	unicodeValue["\u0BC9"] = 'OY';
 	unicodeValue["\u0BCA"] = 'oV';
