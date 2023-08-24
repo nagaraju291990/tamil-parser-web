@@ -177,7 +177,8 @@ function submittext(){
 					 cur_token = cur_token.replace(/^\^/g, "");
 					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
 					 if(cur_token.trim() != "") {
-						 motable += '<tr><td style="width:10%;">' + convert_tam_wx2utf(cur_token) + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
+						 cur_token = convert_tam_wx2utf(cur_token);
+						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
 					 }
 				 }
 			 }
