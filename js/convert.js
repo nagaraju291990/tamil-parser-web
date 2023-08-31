@@ -175,10 +175,23 @@ function submittext(){
 				 for (var i=0; i<data.morph.length; i++) {
 					 var cur_token = data.morph[i]["token"];
 					 cur_token = cur_token.replace(/^\^/g, "");
-					 var cur_tag = escapeHtml(data.morph[i]["feature"]);
+					 var cur_tag = data.morph[i]["feature"];
 					 if(cur_token.trim() != "") {
 						 cur_token = convert_tam_wx2utf(cur_token);
-						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + cur_tag + ' </td></tr>';
+						 var fs = cur_tag;//.split("");
+						 var fs_out = [];
+						 var count = 0;
+						 for(var j=0;j<fs.length;j++){
+							var ffs = fs[j].split("<");
+							console.log(ffs);
+							console.log(j);
+							console.log(count);
+							count = count + 1;
+							var root = convert_tam_wx2utf(ffs[0]);
+							var ffs_out = ffs.slice(1);
+							fs_out[j] = root + "<" + ffs_out.join("<");
+						 }
+						 motable += '<tr><td style="width:10%;">' + cur_token + '</td><td style="width:90%;"> ' + escapeHtml(fs_out.join("/")) + ' </td></tr>';
 					 }
 				 }
 			 }
