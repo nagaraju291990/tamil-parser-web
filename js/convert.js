@@ -385,6 +385,7 @@ function escapeHtml(string) {
 
 function tokenize(string) {
     string = string.replace(/([\.,<>\?\/\;\"\':\{\}\[\]\(\)\!@#$])/g, " $1");
+    string = string.replace(/ +/g, " ");
     console.log(string);
     return string;
 }
