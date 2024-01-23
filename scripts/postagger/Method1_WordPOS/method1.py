@@ -82,7 +82,8 @@ model = BiLSTMTagger(EMBEDDING_DIM, HIDDEN_DIM, len(model_vocab), len(tag2idx), 
 loss_function = nn.NLLLoss()
 optimizer = optim.Adam(model.parameters())
 
-PATH = "/var/www/html/tamil-parser/scripts/postagger/Method1_WordPOS/Tamil_POS_BertTokenizer_Method1_savedModel.pth"
+#PATH = "/var/www/html/tamil-parser/scripts/postagger/Method1_WordPOS/Tamil_POS_BertTokenizer_Method1_savedModel.pth"
+PATH = "/var/www/html/tamil-parser/scripts/postagger/Method1_WordPOS/Tamil_POS_BertTokenizer_08Jan2024_100K_savedModel.pth"
 model.load_state_dict(torch.load(PATH))
 
 #test_sentence = "இதன் மூலம் ஆண்மையை அதிகரிக்கும் மிக சிறந்த ஜூஸாக உள்ளது .".split()
