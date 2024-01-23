@@ -118,7 +118,7 @@ function submittext(){
 	//Ajax call to upload and submit for conversion
 	$.ajax({
 		type: 'POST',
-		url: "scripts/annotate.php",
+		url: "scripts/annotate2.php",
 		//data: "&from=" + from + "&to=" + to + "&text=" + srctext,
 		data: "&text=" + srctext + "&output_type=" + output_type,
 		header:"application/x-www-form-urlencoded",

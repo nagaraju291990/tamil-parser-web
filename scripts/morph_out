@@ -1,0 +1,15 @@
+#Sent_id=1
+#text=புராணங்கள் , கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும் .
+1	purANafkalY	NOUN	^purANafkalY/purANam<lcat:noun><gen:any><num:pl><per:3><case:o><cm:obl><suffix:obl>/purANam<lcat:noun><gen:any><num:pl><per:3><case:d><cm:0><suffix:0>$
+2	,	PUNCT	^,/,<lcat:punc>$
+3	kattukkawEkalY	NOUN	^kattukkawEkalY/kattukkawE<lcat:noun><gen:any><num:pl><per:3><case:o><cm:obl><suffix:obl>/kattukkawE<lcat:noun><gen:any><num:pl><per:3><case:d><cm:0><suffix:0>$
+4	marYrYum	CCONJ	^marYrYum/marYrYum<lcat:avy>$
+5	nampikkEkalY	NOUN	^nampikkEkalY/nampikkE<lcat:noun><gen:any><num:pl><per:3><case:o><cm:obl><suffix:obl>/nampikkE<lcat:noun><gen:any><num:pl><per:3><case:d><cm:0><suffix:0>$
+6	inwiya	PROPN	^inwiya/inwiya<lcat:adj><gen:any><num:any><per:any><cm:0_adj><suffix:0_adj>/inwiyanY<lcat:noun><gen:any><num:sg><per:3><case:o><cm:a><suffix:a>$
+7	vAlYYkkE	NOUN	^vAlYYkkE/vAlYYkkE<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>/vAlYYkkE<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$
+8	murYEyinY	NOUN	^murYEyinY/murYE<lcat:noun><gen:any><num:sg><per:3><case:o><cm:inY><suffix:inY>$
+9	oVru	DET	^oVru/oVnYrYu<lcat:num><gen:any><num:any><per:any><cm:obl><suffix:obl>$
+10	pakuwi	NOUN	^pakuwi/pakuwi<lcat:noun><gen:any><num:sg><per:3><case:o><cm:obl><suffix:obl>/pakuwi<lcat:noun><gen:any><num:sg><per:3><case:d><cm:0><suffix:0>$
+11	Akum	VERB	^Akum/Aku<lcat:verb><gen:n><num:sg><per:3><tam:pp><suffix:pp>/Aku<lcat:verb><gen:n><num:sg><per:3><tam:pp><suffix:pp_um>/Aku<lcat:verb><gen:n><num:pl><per:3><tam:pp><suffix:pp>/Aku<lcat:verb><gen:n><num:pl><per:3><tam:pp><suffix:pp_um>/Aku<lcat:verb><gen:any><num:any><per:any><tam:pp_a><suffix:pp_a>/Aku<lcat:verb><gen:any><num:sg><per:2><tam:0><suffix:0_um><hon:y>$
+12	.	PUNCT	^./.<lcat:punc>$
+

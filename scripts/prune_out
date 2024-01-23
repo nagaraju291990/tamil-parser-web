@@ -1,0 +1,12 @@
+1	purANafkalY	NOUN	<fs af='purANam,n,any,pl,3,d,0,0'>|<fs af='purANam,n,any,pl,3,o,obl,obl'>
+2	,	PUNCT	<fs af=',,punc,,,,,,'>
+3	kattukkawEkalY	NOUN	<fs af='kattukkawE,n,any,pl,3,d,0,0'>|<fs af='kattukkawE,n,any,pl,3,o,obl,obl'>
+4	marYrYum	CCONJ	<fs af='marYrYum,avy,,,,,,'>
+5	nampikkEkalY	NOUN	<fs af='nampikkE,n,any,pl,3,d,0,0'>|<fs af='nampikkE,n,any,pl,3,o,obl,obl'>
+6	inwiya	PROPN	<fs af='inwiyanY,n,any,sg,3,o,a,a'>
+7	vAlYYkkE	NOUN	<fs af='vAlYYkkE,n,any,sg,3,d,0,0'>|<fs af='vAlYYkkE,n,any,sg,3,o,obl,obl'>
+8	murYEyinY	NOUN	<fs af='murYE,n,any,sg,3,o,inY,inY'>
+9	oVru	DET	<fs af='oVnYrYu,num,any,any,any,,obl,obl'>
+10	pakuwi	NOUN	<fs af='pakuwi,n,any,sg,3,d,0,0'>|<fs af='pakuwi,n,any,sg,3,o,obl,obl'>
+11	Akum	VERB	<fs af='Aku,v,n,sg,3,,pp,pp'>|<fs af='Aku,v,n,sg,3,,pp,pp_um'>|<fs af='Aku,v,n,pl,3,,pp,pp'>|<fs af='Aku,v,n,pl,3,,pp,pp_um'>|<fs af='Aku,v,any,any,any,,pp_a,pp_a'>|<fs af='Aku,v,any,sg,2,,0,0_um' hon='y'>
+12	.	PUNCT	<fs af='.,punc,,,,,,'>

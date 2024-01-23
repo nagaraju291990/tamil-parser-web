@@ -1,0 +1,14 @@
+#Sentid=1				_				_	
+#text=புராணங்கள் , கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும் .				_				_	
+1	purANafkalY	purANam	POSUNK	_	Case=Nom|Number=Plur	0	root	0:root	-
+2	,		POSUNK	_	###None	0	root	0:root	-
+3	kattukkawEkalY	kattukkawE	POSUNK	_	Case=Nom|Number=Plur	0	root	0:root	-
+4	marYrYum	marYrYum	POSUNK	_	###None	0	root	0:root	-
+5	nampikkEkalY	nampikkE	POSUNK	_	Case=Nom|Number=Plur	0	root	0:root	-
+6	inwiya	inwiya	POSUNK	_	###None	0	root	0:root	-
+7	vAlYYkkE	vAlYYkkE	POSUNK	_	Case=Nom|Number=Sing	0	root	0:root	-
+8	murYEyinY	murYE	POSUNK	_	Case=Gen|Number=Sing	0	root	0:root	-
+9	oVru	oVnYrYu	POSUNK	_	###None	0	root	0:root	-
+10	pakuwi	pakuwi	POSUNK	_	Case=Nom|Number=Sing	0	root	0:root	-
+11	Akum	Aku	POSUNK	_	Gender=Neut|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	0	root	0:root	-
+12	.	.	POSUNK	_	###None	0	root	0:root	-

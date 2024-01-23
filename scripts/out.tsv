@@ -1,0 +1,14 @@
+#Sent_id=1									
+#text=புராணங்கள் , கட்டுக்கதைகள் மற்றும் நம்பிக்கைகள் இந்திய வாழ்க்கை முறையின் ஒரு பகுதி ஆகும் .									
+1	purANafkalY	purANam	NOUN	Case=Nom|Number=Plur	<fs af='purANam,n,any,pl,3,d,0,0'>	<fs af='purANam,n,any,pl,3,d,0,0'>	-	nsubj:11	-
+2	,		PUNCT	###None	<fs af=',,punc,,,,,,'>	<fs af=',,punc,,,,,,'>	-	punct:1	-
+3	kattukkawEkalY	kattukkawE	NOUN	Case=Nom|Number=Plur	<fs af='kattukkawE,n,any,pl,3,d,0,0'>	<fs af='kattukkawE,n,any,pl,3,d,0,0'>	-	nsubj:11	-
+4	marYrYum	marYrYum	CCONJ	###None	<fs af='marYrYum,avy,,,,,,'>	<fs af='marYrYum,avy,,,,,,'>	-	cc:11, cc:10, cc:8, cc:7, cc:6, cc:5	-
+5	nampikkEkalY	nampikkE	NOUN	Case=Nom|Number=Plur	<fs af='nampikkE,n,any,pl,3,d,0,0'>	<fs af='nampikkE,n,any,pl,3,d,0,0'>	-	nsubj:11	-
+6	inwiya	inwiyanY	PROPN	Number=Sing	<fs af='inwiyanY,n,any,sg,3,o,a,a'>	<fs af='inwiyanY,n,any,sg,3,o,a,a'>	-	nmod:10, nmod:7	-
+7	vAlYYkkE	vAlYYkkE	NOUN	Case=Nom|Number=Sing	<fs af='vAlYYkkE,n,any,sg,3,d,0,0'>	<fs af='vAlYYkkE,n,any,sg,3,d,0,0'>	-	nsubj:11	-
+8	murYEyinY	murYE	NOUN	Case=Gen|Number=Sing	<fs af='murYE,n,any,sg,3,o,inY,inY'>	<fs af='murYE,n,any,sg,3,o,inY,inY'>	-	nmod_poss_noun:10, nmod:10	-
+9	oVru	oVnYrYu	DET	###None	<fs af='oVnYrYu,num,any,any,any,,obl,obl'>	<fs af='oVnYrYu,num,any,any,any,,obl,obl'>	-	det:10	-
+10	pakuwi	pakuwi	NOUN	Case=Nom|Number=Sing	<fs af='pakuwi,n,any,sg,3,d,0,0'>	<fs af='pakuwi,n,any,sg,3,d,0,0'>	-	nsubj:11	-
+11	Akum	Aku	VERB	Gender=Neut|Number=Sing|Person=3|Tense=Fut|VerbForm=Fin	<fs af='Aku,v,n,sg,3,,pp,pp'>	<fs af='Aku,v,n,sg,3,,pp,pp'>	-	-	-
+12	.	.	PUNCT	###None	<fs af='.,punc,,,,,,'>	<fs af='.,punc,,,,,,'>	-	punct:11	-

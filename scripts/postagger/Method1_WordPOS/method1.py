@@ -107,7 +107,11 @@ _, predicted_tags = torch.max(tag_scores, 1)
 
 # print(idx2tag)
 ct = 0
+count = 1
+print("#Sent_id=1")
+print("#text="+lines)
 for i in predicted_tags:
-    print(test_sentence[ct], end="\t")
+    print(count, test_sentence[ct], sep="\t", end='\t')
     print(idx2tag[i.item()])
     ct += 1
+    count += 1
